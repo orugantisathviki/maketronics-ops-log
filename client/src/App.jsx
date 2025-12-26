@@ -14,7 +14,7 @@ function App() {
 
   const fetchLogs = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/logs');
+      const response = await axios.get('https://maketronics-ops-log.onrender.com/api/logs');
       setLogs(response.data.data);
     } catch (error) {
       console.error("Error fetching logs:", error);
@@ -32,7 +32,7 @@ function App() {
     setLoading(true);
     try {
       // Send raw text to backend
-      await axios.post('http://localhost:3001/api/logs', { text: input });
+      await axios.post('https://maketronics-ops-log.onrender.com/api/logs', { text: input });
       // Clear input and reload list
       setInput('');
       fetchLogs();
